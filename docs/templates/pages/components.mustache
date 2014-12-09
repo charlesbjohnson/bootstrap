@@ -5,6 +5,7 @@
     <h1>{{_i}}Components{{/i}}</h1>
     <p class="lead">{{_i}}Dozens of reusable components built to provide navigation, alerts, popovers, and more.{{/i}}</p>
   </div>
+  <a class="extended-badge" href="http://www.jasny.net" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron badge', 'Jasny.net']);"{{/production}}><img src="assets/img/extended-by-jasny.png"></a>
 </header>
 
 
@@ -985,6 +986,39 @@
           </div>{{! /example }}
 <pre class="prettyprint linenums">
 &lt;div class="tabbable tabs-right"&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    ...
+  &lt;/ul&gt;
+  &lt;div class="tab-content"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h4>{{_i}}Bordered tabbable{{/i}}</h4>
+          <p>{{_i}}You can place a border around the tab content by adding <code>.tabbable-bordered</code> to the <code>.tabbable.</code>{{/i}}</p>
+          <div class="bs-docs-example">
+            <div class="tabbable tabbable-bordered">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#xA" data-toggle="tab">{{_i}}Section 1{{/i}}</a></li>
+                <li><a href="#xB" data-toggle="tab">{{_i}}Section 2{{/i}}</a></li>
+                <li><a href="#xC" data-toggle="tab">{{_i}}Section 3{{/i}}</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="xA">
+                  <p>{{_i}}I'm in Section A.{{/i}}</p>
+                </div>
+                <div class="tab-pane" id="xB">
+                  <p>{{_i}}Howdy, I'm in Section B.{{/i}}</p>
+                </div>
+                <div class="tab-pane" id="xC">
+                  <p>{{_i}}What up girl, this is Section C.{{/i}}</p>
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
+          </div>{{! /example }}
+<pre class="prettyprint linenums">
+&lt;div class="tabbable tabbable-bordered"&gt;
   &lt;ul class="nav nav-tabs"&gt;
     ...
   &lt;/ul&gt;
@@ -2098,7 +2132,28 @@
   ...
 &lt;/div&gt;
 </pre>
-
+          
+          <a name="page-alerts"></a>
+          <h3>{{_i}}Page alerts{{/i}}</h3>
+          <p>{{_i}}Know those nice little alerts after you save your profile? With <code>.page-alert</code> the alert will be shown on top op your page.{{/i}}</p>
+          <div id="page-alert-container" class="bs-docs-example">
+            <div class="page-alert">
+              <div class="alert alert-success">
+                <a class="close">×</a>
+                <strong>{{_i}}Success!{{/i}}</strong> {{_i}}Your profile information has been saved.{{/i}}
+              </div>
+            </div>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          </div>
+<pre class="prettyprint linenums">
+&lt;body&gt;
+  &lt;div class="navbar"&gt; ... &lt;/div&gt;
+  &lt;div class="page-alert"&gt;
+    &lt;div class="alert"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
         </section>
 
 

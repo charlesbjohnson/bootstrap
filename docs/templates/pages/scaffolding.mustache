@@ -5,6 +5,7 @@
     <h1>{{_i}}Scaffolding{{/i}}</h1>
     <p class="lead">{{_i}}Bootstrap is built on responsive 12-column grids, layouts, and components.{{/i}}</p>
   </div>
+  <a class="extended-badge" href="http://www.jasny.net" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron badge', 'Jasny.net']);"{{/production}}><img src="assets/img/extended-by-jasny.png"></a>
 </header>
 
   <div class="container">
@@ -313,6 +314,25 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
+
+          <a name="semi-fluid-layout"></a>
+          <h2>{{_i}}Semi-fluid layout{{/i}}</h2>
+          <p>{{_i}}Get the best of both worlds with <code>&lt;div class="container-semifluid"&gt;</code>. It acts as a fixed layout for big screens. For smaller screens, it behaves like a fluid layout.{{/i}}</p>
+          <div class="semifluid-layouts">
+            <div class="mini-layout desktop">
+              <div class="mini-layout-body"></div>
+            </div>
+            <div class="mini-layout tablet">
+              <div class="mini-layout-body"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="container-fluid"&gt;
+  &lt;div class="row-fluid"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
         </section>
 
 
@@ -475,6 +495,23 @@
             <li>{{_i}}Desktop{{/i}}<span class="hidden-desktop">&#10004; {{_i}}Desktop{{/i}}</span></li>
           </ul>
 
+          <!-- Desktop row -->
+          <a name="row-desktop"></a>
+          <h2>{{_i}}Desktop rows{{/i}}</h2>
+          <p>{{_i}}By default columns of a <code>.row</code> are show next to each other, however for phones the columns are show underneath each other. By adding the class <code>.row-desktop</code> to a row,
+          it will display the columns underneath each other for tablets as well.{{/i}}</p>
+          <h4>{{_i}}Test case{{/i}}</h4>
+          <p>{{_i}}Resize your browser to see the rows behave differently. They look the same for desktops and phones, but different for tablets.{{/i}}</p>
+          <div class="row show-grid">
+            <div class="span3">Normal row 1</div>
+            <div class="span3">Normal row 2</div>
+            <div class="span3">Normal row 3</div>
+          </div>
+          <div class="row show-grid row-desktop">
+            <div class="span3">Desktop row 1</div>
+            <div class="span3">Desktop row 2</div>
+            <div class="span3">Desktop row 3</div>
+          </div>
         </section>
 
 

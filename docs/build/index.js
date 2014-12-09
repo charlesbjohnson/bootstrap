@@ -2,9 +2,14 @@
 var hogan = require('hogan.js')
   , fs    = require('fs')
   , prod  = process.argv[2] == 'production'
-  , title = 'Bootstrap'
+  , title = 'Jasny Bootstrap'
 
-var layout, pages
+var info, version, layout, pages
+
+// get version
+info = fs.readFileSync(__dirname + '/../../package.json', 'utf-8')
+info = JSON.parse(info)
+version = info.version
 
 // compile layout template
 layout = fs.readFileSync(__dirname + '/../templates/layout.mustache', 'utf-8')
@@ -28,6 +33,8 @@ pages.forEach(function (name) {
     .replace(/\.mustache/, '')
     .replace(/\-.*/, '')
     .replace(/(.)/, function ($1) { return $1.toUpperCase() })
+  context.version = version
+  context.jasny_version = version.replace(/^.+-/, '')
 
   if (context.title == 'Index') {
     context.title = title

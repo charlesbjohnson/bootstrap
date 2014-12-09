@@ -4,10 +4,16 @@
  */
 
 var connect = require('connect')
+  , url = require('url')
+  , querystring = require('querystring')
   , http = require('http')
   , fs   = require('fs')
   , app = connect()
-      .use(connect.static(__dirname + '/../../'));
+      .use(connect.static(__dirname + '/../../'))
+      .use(function(req, res, next) {
+          if (url.parse(req.url).pathname == '/data') res.end(querystring.parse(url.parse(req.url).query).items)
+            else next()
+      })
 
 http.createServer(app).listen(3000);
 
